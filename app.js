@@ -147,28 +147,31 @@ app.get('/logout', (req, res) => {
   // res.cookie("loggedIn", loggedIn, { expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) })
   res.redirect("/");
 });
-app.get("/posts/:postName", async (req, res) => {
-  const reqTitle = req.params.postName;
-    let postDetails = await postsCollection.findOne({postTitle:reqTitle}).exec();
-  let userDetails = await User.findOne({ username: postDetails.author }).exec();
-  try {
-    // const postDetails = await postsCollection.findOne({ postTitle: reqTitle }).exec();
-    if (postDetails != "") {
-      res.render("post", {
-        postTitle: postDetails.postTitle,
-        postBody: postDetails.postBody,
-        letter: userDetails.username.charAt(0).toUpperCase(),
-        username: userDetails.username,
-        useremail: userDetails.email,
-        time: postDetails.createdAt,
-        author: postDetails.author
-      });
-    } else {
-      res.status(404).send("Post not found");
+if (req.cookies.loggedIn) {
+    const reqTitle = req.params.postName;
+    let postDetails = await postsCollection.findOne({ postTitle: reqTitle }).exec();
+    let userDetails = await User.findOne({ username: postDetails.author }).exec();
+    try {
+      if (postDetails != "") {
+        res.render("post", {
+          postTitle: postDetails.postTitle,
+          postBody: postDetails.postBody,
+          letter: userDetails.username.charAt(0).toUpperCase(),
+          username: userDetails.username,
+          useremail: userDetails.email,
+          time: postDetails.createdAt,
+          author: postDetails.author
+        });
+      } else {
+        res.status(404).send("Post not found");
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
     }
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server Error");
+  }
+  else{
+    res.redirect("/")
   }
 })
 app.get('/delete/:title', async (req, res) => {
