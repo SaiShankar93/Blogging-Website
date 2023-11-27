@@ -14,7 +14,7 @@ mongoose.connect('mongodb+srv://saishankar15052005:sai123@cluster0.yxadvfg.mongo
   .then(() => {
     console.log("connected successfully to mongodb");
   }).catch((e) => {
-    console.log("error while connecting to mongodb",error.message);
+    console.log("error while connecting to mongodb",e.message);
   })
 const app = express();
 app.use(cookieParser());
