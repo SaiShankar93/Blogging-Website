@@ -149,9 +149,10 @@ app.get('/logout', (req, res) => {
 });
 app.get("/posts/:postName", async (req, res) => {
   const reqTitle = req.params.postName;
-  let userDetails = await User.findOne({ username: req.cookies.Username });
+    let postDetails = await postsCollection.findOne({postTitle:reqTitle}).exec();
+  let userDetails = await User.findOne({ username: postDetails.author }).exec();
   try {
-    const postDetails = await postsCollection.findOne({ postTitle: reqTitle }).exec();
+    // const postDetails = await postsCollection.findOne({ postTitle: reqTitle }).exec();
     if (postDetails != "") {
       res.render("post", {
         postTitle: postDetails.postTitle,
