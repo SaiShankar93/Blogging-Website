@@ -1,0 +1,11 @@
+<%- include("partials/header") -%>
+<div class="" >
+    <h1 class="text-3xl text-black-900 py-10 px-auto mx-auto text-center"><%=postTitle %></h1>
+    <div class="text-center">
+        <h6><%=author%></h6>
+        <h6><%=time.toLocaleString()%></h6>
+    </div>
+    <p class="text-sm px-5 py-10 whitespace-pre-wrap text-start md:px-20 md:text-lg "><%= postBody%></p>
+</div>
+
+<%- include("partials/footer") -%>

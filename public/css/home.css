@@ -1,0 +1,24 @@
+body {
+    /* margin: auto;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(137, 184, 184, 0.8) 3%, rgba(255, 140, 0, 0.8) 38%, rgba(65, 105, 225, 0.8) 68%, rgba(208, 214, 197, 0.8) 98%);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;  */
+    background-color: #eaeff5;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+#postTitle{
+    white-space: pre-wrap;
+}

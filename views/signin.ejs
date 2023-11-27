@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/signin.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/signin" name="form" method="post">
+            <div class="input">
+                <input id="email" name="email" type="email" placeholder="Email id or mobile number" autocomplete="email"
+                    required>
+                <input class="password" name="password" type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="input" for="form">
+                <button class="login-btn" id="login-btn" type="submit">Login</button>
+            </div>
+        </form>
+        <a href="./signup" class="register">Create a new account</a>
+    </div>
+    <script src="/js/signin.js"></script>
+    <%- include("partials/footer") -%>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Merriweather&family=Roboto:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    background: url(../images/blog.webp)no-repeat;
+    background-position: center;
+
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lora', serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 0, 0, .2);
+    width: 400px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -80px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.container h1 {
+    margin: 10px 0;
+}
+
+.input {
+    width: 100%;
+}
+
+.input input {
+    padding: 1rem;
+    width: 100%;
+    margin: 5px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: transparent;
+    color: black;
+}
+
+.input input::placeholder {
+    color: black;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+}
+
+.login-btn {
+    padding: 1rem;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+.help {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#rmbr-me {
+    font-size: 20px;
+    margin-left: 10px;
+    color: black;
+}
+
+.help a {
+    font-size: 18px;
+    color: black;
+    text-decoration: underline;
+}
+
+.register {
+    color: black;
+    font-size: 22px;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+@media (max-width : 400px){
+    body{
+        background-color:red;
+    }
+}

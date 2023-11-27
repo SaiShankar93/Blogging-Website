@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/signin.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form action="/signup" name="form" method="post">
+            <div class="input">
+                <input id="userName" type="text" placeholder="Enter Your name " name="userName" autocomplete="name"
+                    required>
+                <input id="email" type="email" placeholder="Enter Email id " name="email" autocomplete="email" required>
+                <input id="mobile" type="text" placeholder="Enter mobile number" name="mobile" autocomplete="mobile"
+                    required>
+                <input class="password" type="password" id="password" name="password" placeholder="Create Password"
+                    required>
+            </div>
+            <div class="input" for="form">
+                <button class="login-btn" id="login-btn" type="submit">SignUp</button>
+            </div>
+        </form>
+        <a href="/signin" class="register">Already a User? Sign in</a>
+    </div>
+    <script src="/js/signin.js"></script>
+    <%- include("partials/footer") -%>
