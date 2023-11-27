@@ -8,8 +8,9 @@ const User = require('./public/js/user.js');
 const postsCollection = require("./public/js/posts.js");
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
 mongoose.connect('mongodb+srv://saishankar15052005:sai123@cluster0.yxadvfg.mongodb.net/?retryWrites=true&w=majority')
+
+// mongoose.connect('mongodb+srv://saishankar15052005:sai123@cluster0.yxadvfg.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
     console.log("connected successfully to mongodb");
   }).catch((e) => {
