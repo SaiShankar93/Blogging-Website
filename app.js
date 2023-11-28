@@ -188,5 +188,5 @@ app.get('/delete/:title', async (req, res) => {
 });
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
-  console.log("Server started on port 3000");
+    console.log(`Server started on port ${port)`);
 });
