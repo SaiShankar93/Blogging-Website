@@ -147,7 +147,8 @@ app.get('/logout', (req, res) => {
   // res.cookie("loggedIn", loggedIn, { expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) })
   res.redirect("/");
 });
-if (req.cookies.loggedIn) {
+app.get("/posts/:postName", async (req, res) => {
+  if (req.cookies.loggedIn) {
     const reqTitle = req.params.postName;
     let postDetails = await postsCollection.findOne({ postTitle: reqTitle }).exec();
     let userDetails = await User.findOne({ username: postDetails.author }).exec();
